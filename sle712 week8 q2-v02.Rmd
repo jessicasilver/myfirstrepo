@@ -1,0 +1,50 @@
+---
+title: "week8 q2-take2"
+author: "jls"
+date: "06/05/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+##Q2 Read in car dataset
+First, read in `cars` dataset. 
+Next, define new new values for `speed` and `dist`. 
+
+```{r cars, include=FALSE}
+summary(cars)
+speed <- cars$speed
+dist <- cars$dist
+```
+
+##Building the speed x dist plot
+
+We have defined `speed` and `dist`
+We can eyeball the data using the `plot` function.
+Following this, we can create a new data name for the linear regression model. This has been named `lm_cars`. 
+Have a look at the output using the `summary()` function. 
+
+
+```{r cars}
+plot(x=speed, y=dist)
+lm_cars <- lm(dist ~ speed)
+summary(lm_cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
